@@ -1,0 +1,16 @@
+{
+  "name": "https-server",
+  "version": "0.0.1",
+  "description": "simple http server with certificate ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "https",
+    "ssl",
+    "certificate"
+  ],
+  "author": "Shaik Ikbhal Basha",
+  "license": "MIT"
+}
