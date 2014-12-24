@@ -19,9 +19,9 @@ var appSecret = process.env.APP_SECRET;
 var verifyToken = process.env.VERIFY_TOKEN;
 var callbackUrl = process.env.CALLBACK_URL;
 
-console.log("appId:" + appId + ";appSecret:"  + appSecret
-	+ ";verifyToken:" + verifyToken 
-	+ ";callbackUrl:" + callbackUrl);
+console.log("appId:" + appId + ";appSecret:"  + appSecret +
+	 ";verifyToken:" + verifyToken + 
+         ";callbackUrl:" + callbackUrl);
 
 //facebook subscription module initialization
 
