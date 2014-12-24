@@ -1,4 +1,5 @@
 var env = require('node-env-file');
+var util = require('util');
 var fbsub = require('fbsub');
 var http = require('http');
 var express = require('express');
@@ -65,17 +66,17 @@ app.use(cookieParser());
 
 
 app.get('/', function(req, res){
-	res.send('Hello World!');
+  res.send('Real Time Updates of Faceook API, check console.log for request');
 });
-/*
+
 // Verification for Facebook REquest
 app.get(callbackUrl, fbsub.verify);
 
 // Handle Facebook Push for Realtime Update
 app.post(callbackUrl, function(req, res){
-
+  console.log(util.inspect(req));
 });
-*/
+
 
 //check subscription list
 // https://graph.facebook.com/<APP_ID>/subscriptions?access_token=<ACCESS_TOKEN>

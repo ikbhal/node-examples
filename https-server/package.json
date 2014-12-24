@@ -12,5 +12,8 @@
     "certificate"
   ],
   "author": "Shaik Ikbhal Basha",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.10.6"
+  }
 }
