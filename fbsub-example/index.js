@@ -33,7 +33,8 @@ fbsub.init({
 	callbackUrl: callbackUrl
 });
 
-
+var object = 'user';
+var fields = 'interests,about, about_me,likes';
 // fb authenticate
 fbsub.authenticate(function(err){
 	if(err == null) {
