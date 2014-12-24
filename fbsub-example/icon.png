@@ -1,0 +1,18 @@
+realTimeUpdates facebook website app for experimenting with fbsub
+-------------------
+app id:
+325529327652510
+
+app secret:
+d4c14723a47fd590afdec00f84d531a6
+
+callbackUrl:
+http://toprecur.cloudapp.net/auth/facebook/callback
+
+#facebook app credentials
+APP_NAME=realTimeUpdates
+APP_URL=https://facebook.com/apps/real-time-updates-ik
+APP_ID=325529327652510
+APP_SECRET=d4c14723a47fd590afdec00f84d531a6
+VERIFY_TOKEN=realTimeUpdates
+CALLBACK_URL=http://toprecur.cloudapp.net/auth/facebook/callback
