@@ -28,6 +28,24 @@ console.log("appId:" + appId + ";appSecret:"  + appSecret +
 	 ";verifyToken:" + verifyToken + 
          ";callbackUrl:" + callbackUrl);
 
+//Mongo stuff
+var MONGO_URI = 'mongodb://localhost/fbsub-example';
+var mongo = MONGO_URI;
+
+mongoose.connect(mongo, function(err){
+	if(err){
+		console.log("Unable to connec to mongo due to err: " + err);
+	} else {
+		console.log('Connect to mongo successfully');
+	}
+});
+
+var User = mongoose.model('User', 	{
+	oauthID: Number,
+	name: String,
+	created: Date
+});
+
 
 // serialize and deserialize
 passport.serializeUser(function(user, done){
@@ -49,13 +67,13 @@ passport.deserializeUser(function(id, done){
 
 // config
 passport.use(new FacebookStrategy({
-		clientID: clientID,
-		clientSecret: clientSecret,
+		clientID: appId,
+		clientSecret: appSecret,
 		callbackURL: callbackUrl
 	},
 	function(accessToken, refreshToken, profile, done){
 		User.findOne({oauthID: profile.id}, function(err,user){
-			if(err) { console.log(err); done(err, null);};
+			if(err) { console.log(err); done(err, null);}
 			if(!err && user != null ){
 				done(null, user);
 			} else {
@@ -68,7 +86,7 @@ passport.use(new FacebookStrategy({
 				user.save(function(err, user){
 					if(err){
 						console.log(err);
-						done(err, nul);
+						done(err, null);
 					}else{
 						console.log('Saving user ...');
 						done(null, user);
@@ -106,25 +124,13 @@ fbsub.authenticate(function(err){
 	}
 });
 
-//Mongo stuff
-var MONGO_URI = 'mongodb://localhost/fbsub-example';
-var mongo = MONGO_URI;
-
-mongoose.connect(mongo, function(err){
-	if(err){
-		console.log("Unable to connec to mongo due to err: " + err);
-	} else {
-		console.log('Connect to mongo successfully');
-	}
-});
-
-var User = mongoose.model('User', 	{
-	oauthID: Number,
-	name: String,
-	created: Date
-});
-
-
+//test authentication
+function ensureAuthenticated(req, res, next) {
+	if(req.isAuthenticated()) {
+		return next();
+	} 
+	res.redirect('/');
+}
 
 var app = express();
 
@@ -204,10 +210,3 @@ http.createServer(app).listen(app.get('port'), function(err){
 	console.log("Express server is running at port: " + app.get('port'));
 });
 
-//test authentication
-function ensureAuthenticated(req, res, next) {
-	if(req.isAuthenticated()) {
-		return next();
-	} 
-	res.redirect('/');
-}
