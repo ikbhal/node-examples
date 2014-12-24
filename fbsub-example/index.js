@@ -39,7 +39,7 @@ var fields = 'interests,about, about_me,likes';
 fbsub.authenticate(function(err){
 	if(err == null) {
 		fbsub.subscribe(object, fields, function(err){
-			if(err == nul) {
+			if(err == null) {
 				console.log('fbsub subscribe succeeded');
 			}else {
 				console.log('fbsub subscribe failed');
