@@ -25,7 +25,7 @@ console.log("appId:" + appId + ";appSecret:"  + appSecret
 
 //facebook subscription module initialization
 
-/*
+
 fbsub.init({
 	appId: appId,
 	appSecret: appSecret,
@@ -48,7 +48,7 @@ fbsub.authenticate(function(err){
 		console.log('fbsub auth failed');
 	}
 });
-*/
+
 var app = express();
 
 app.set('port', 80);
