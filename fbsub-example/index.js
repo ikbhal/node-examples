@@ -25,7 +25,7 @@ console.log("appId:" + appId + ";appSecret:"  + appSecret +
 
 //facebook subscription module initialization
 
-/*
+
 fbsub.init({
 	appId: appId,
 	appSecret: appSecret,
@@ -49,7 +49,7 @@ fbsub.authenticate(function(err){
 		console.log('fbsub auth failed');
 	}
 });
-*/
+
 var app = express();
 
 app.set('port', 80);
@@ -70,16 +70,16 @@ app.get('/', function(req, res){
   res.send('Real Time Updates of Faceook API, check console.log for request');
 });
 
-/*
+
 // Verification for Facebook REquest
-app.get(callbackUrl, fbsub.verify);
+app.get('/auth/facebook/callback', fbsub.verify);
 
 // Handle Facebook Push for Realtime Update
-app.post(callbackUrl, function(req, res){
+app.post('/auth/facebook/callback', function(req, res){
   console.log(util.inspect(req));
 });
 
-*/
+
 //check subscription list
 // https://graph.facebook.com/<APP_ID>/subscriptions?access_token=<ACCESS_TOKEN>
 
