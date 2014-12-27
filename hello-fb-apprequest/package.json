@@ -1,0 +1,14 @@
+{
+  "name": "hello-fb-apprequest",
+  "version": "1.0.0",
+  "description": "Post simple hello world app request to your facebook account",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fb": "^0.7.0"
+  }
+}
