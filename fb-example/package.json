@@ -1,0 +1,17 @@
+{
+  "name": "fb-example",
+  "version": "1.0.0",
+  "description": "Sample example practice with fb npm module as given in fb npm mondule",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fb"
+  ],
+  "author": "Ikbhal",
+  "license": "MIT",
+  "dependencies": {
+    "fb": "^0.7.0"
+  }
+}
