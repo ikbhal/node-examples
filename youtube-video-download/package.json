@@ -1,0 +1,21 @@
+{
+  "name": "youtube-video-download",
+  "version": "1.0.0",
+  "description": "Download youtube video using npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "youtube",
+    "video",
+    "download",
+    "node",
+    "js"
+  ],
+  "author": "Ikbhal Shaik",
+  "license": "MIT",
+  "dependencies": {
+    "ytdl-core": "^0.3.0"
+  }
+}

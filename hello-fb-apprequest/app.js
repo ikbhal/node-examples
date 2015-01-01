@@ -3,7 +3,7 @@ var accessToken = 'CAACEdEose0cBAMxhpXZCm5mBU8zwIlXuLFZCSYgHtouoo0XOlPRKg41Aik3S
 FB.setAccessToken(accessToken);
 
 var body = 'My first app request using facebook-node-sdk (fb npm module)';
-FB.api('me/apprequests', 'post', { message: body} , fucntion(res){
+FB.api('me/apprequests', 'post', { message: body} , function(res){
 	if(!res || res.error) {
 		console.log(!res? 'error occurred' : res.error);
 		return ;

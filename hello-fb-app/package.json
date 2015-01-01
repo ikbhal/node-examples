@@ -1,0 +1,15 @@
+{
+  "name": "hello-fb-app",
+  "version": "1.0.0",
+  "description": "hello world facebook app to your facebook timeline",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.6",
+    "fb": "^0.7.0"
+  }
+}
