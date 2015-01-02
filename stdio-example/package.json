@@ -1,0 +1,22 @@
+{
+  "name": "stdio-example",
+  "version": "1.0.0",
+  "description": "Learning command line options using stdio npm module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stdio",
+    "command",
+    "line",
+    "options",
+    "node",
+    "js"
+  ],
+  "author": "Shaik Ikbhal Basha",
+  "license": "MIT",
+  "dependencies": {
+    "stdio": "^0.2.7"
+  }
+}
