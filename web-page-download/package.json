@@ -1,0 +1,27 @@
+{
+  "name": "web-page-download",
+  "version": "1.0.0",
+  "description": "Download Webpage including dependent files(css, javascript, images,font) as in browser save as web page given for url.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "download",
+    "web",
+    "page",
+    "node",
+    "js",
+    "cheerio",
+    "request"
+  ],
+  "author": "Shaik Ikbhal Basha",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "mkdirp": "^0.5.0",
+    "moment": "^2.8.4",
+    "request": "^2.51.0",
+    "url": "^0.10.1"
+  }
+}
