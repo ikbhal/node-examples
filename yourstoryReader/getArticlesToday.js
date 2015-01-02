@@ -28,7 +28,7 @@ function gotHTML(err, resp, html) {
 		var title = $(article).attr('id');
 		var link = $(article).attr('rel');
 
-		console.log(">>Downloading " + title + "," + link+ "<<");
+		//console.log(">>Downloading " + title + "," + link+ "<<");
 
 		ys.download(link);
 	});

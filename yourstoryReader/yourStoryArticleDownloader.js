@@ -26,15 +26,21 @@ var util = require('util');
 var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
+var url = require('url');
+var path = require('path');
+var outputFile = require('output-file');
 
 //Input vaidation
+/*
 if(process.argv.length <3){
 	console.log("Please enter yourstory article link/url.");
 	process.exit(0);
 }
-
+*/
 
 var articleURL = process.argv[2];
+
+var articleFolder  = "articles";
 
 // request download handle callback
 function gotHTML(err, resp, html) {
@@ -53,30 +59,34 @@ function gotHTML(err, resp, html) {
 	var title = $('.entry-title').text();
 	//console.log("Article title " + title);
 
-	var fileName = title.replace(/\W/g, '_') + '.txt';
+	//var fileName = title.replace(/\W/g, '_') + '.txt';
+	//var fileName = articleFolder + path.sep + url.parse(articleURL).pathname.replace('//', path.sep).slice(1,-1) + ".txt";
+	var fileName  = articleFolder + path.sep + url.parse(articleURL).pathname.replace(/\//g, path.sep).slice(1, -1) + ".txt";
 	//console.log("fileName: " + fileName);
 	//Get text of article
 	// selector top section of article text is : post_content entry-content
 	var text = $('.post_content.entry-content').text().trim();
-	//console.log("Article text is as follows\n" + text);
 
-	fs.writeFile(fileName, text, function(err){
+	console.log("Write to file :" + fileName);
+	//console.log("Article text is as follows\n" + text);
+	
+
+	outputFile(fileName, text, function(err, createdDir){
 		if(err) {
 			console.log("Unable to write to file : " + fileName + " due to error: " + util.inpsect(err));
 			throw err;
 		}
-		//console.log("Successfully writtern article text to file " + fileName);
+		console.log("Successfully writtern article text to file " + fileName);
 	});
-
+	
 }
 // Download article 
 //request(articleURL, gotHTML);
 
-function download(articleURL){
+function download(aURL){
 	// Download article 
+	articleURL =aURL;
 	request(articleURL, gotHTML);
 }
 
-methods.exports = {
-	download
-}
+module.exports.download = download;
