@@ -11,7 +11,7 @@ id: article text, rel attribute for link
 var util = require('util');
 var request  = require('request');
 var cheerio = require('cheerio');
-
+var ys = require('./yourstoryArticleDownloader');
 //constants
 var yourstoryURL = "http://yourstory.com";
 
@@ -28,7 +28,9 @@ function gotHTML(err, resp, html) {
 		var title = $(article).attr('id');
 		var link = $(article).attr('rel');
 
-		console.log(">>" + title + "," + link+ "<<");
+		console.log(">>Downloading " + title + "," + link+ "<<");
+
+		ys.download(link);
 	});
 }
 
