@@ -10,7 +10,7 @@ Then ops object will be as follows:
   map: true,
   kaka: '23' }
 */
-
+'use strict';
 var stdio = require('stdio');
 var ops = stdio.getopt({
     'check': {key: 'c', args: 2, description: 'What this option means'},
